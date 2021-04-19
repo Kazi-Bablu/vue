@@ -19,7 +19,7 @@
         <td>{{user.email}}</td>
       </tr>
     </table>
-
+      <h1>Home Component</h1>
   </div>
 </template>
 
@@ -53,5 +53,8 @@ export default {
 </script>
 
 <style scoped>
-
+  div{
+    background-color: #dde5ec;
+    height: 500px;
+  }
 </style>
