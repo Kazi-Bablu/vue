@@ -14,12 +14,22 @@
         <td>Email Address</td>
       </tr>
       <tr v-for="user in users" :key="user.id">
-        <td>{{user.id}}</td>
-        <td>{{user.name}}</td>
-        <td>{{user.email}}</td>
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
       </tr>
     </table>
-      <h1>Home Component</h1>
+    <h1>Home Component</h1>
+    <h3>{{ name }}</h3>
+    <button v-bind:disabled="disableBtn" v-on:click="click">Click Me</button>
+    <h3>{{ok ? "yes":"NO"}}</h3>
+    <p v-html="rowHtml"></p>
+
+    <h1 class="homeStyle">Class and style Binding</h1>
+    <h1 v-bind:style="{color:colorKey}">Class and style Binding</h1>
+    <h1 v-bind:class="{display:show}">Class Binding with object</h1>
+    <h1 v-bind:class="[show?'yesSHow':'noShow']">Class Binding with array</h1>
+
   </div>
 </template>
 
@@ -36,6 +46,9 @@ export default {
     },
     display() {
       this.show = !this.show
+    },
+    click() {
+      this.name="Peter";
     }
   },
   data() {
@@ -46,15 +59,31 @@ export default {
         {id: 2, name: 'Tony', email: 'Tony@email.com'},
         {id: 3, name: 'Pony', email: 'Pony@email.com'},
         {id: 4, name: 'Monty', email: 'Monty@email.com'},
-      ]
+      ],
+      name: 'Test',
+      ok:false,
+      rowHtml:"<h1>Template in vue js</h1>",
+      disableBtn:false,
+      show:true,
+      aclass:'arrayClass',
+      colorKey:'red'
     }
   }
 }
 </script>
 
 <style scoped>
-  div{
-    background-color: #dde5ec;
-    height: 500px;
-  }
+div {
+  background-color: #dde5ec;
+  height: 500px;
+}
+.homeStyle{
+  color: orange;
+}
+.display{
+  background-color: brown;
+}
+.arrayClass{
+  background-color: cyan;
+}
 </style>
