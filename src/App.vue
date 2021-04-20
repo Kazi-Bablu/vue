@@ -6,10 +6,12 @@
     <Home></Home>
     <users></users>
     <product></product>
+    <DataBind></DataBind>
   </div>
 </template>
 
 <script>
+import DataBind from "./components/DataBind";
 // import HelloWorld from './components/HelloWorld.vue';
 import Home from "./components/Home";
 import Users from "./components/Users";
@@ -19,7 +21,8 @@ export default {
   components: {
     Home,
     Users,
-    Product
+    Product,
+    DataBind
   }
 }
 </script>
